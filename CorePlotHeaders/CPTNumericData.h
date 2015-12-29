@@ -1,61 +1,56 @@
 #import "CPTNumericDataType.h"
-#import <Foundation/Foundation.h>
 
-@interface CPTNumericData : NSObject<NSCopying, NSMutableCopying, NSCoding> {
-    @protected
-    NSData *data;
-    CPTNumericDataType dataType;
-    NSArray *shape; // array of dimension shapes (NSNumber<unsigned>)
-    CPTDataOrder dataOrder;
-}
+@interface CPTNumericData : NSObject<NSCopying, NSMutableCopying, NSCoding>
 
 /// @name Data Buffer
 /// @{
-@property (copy, readonly) NSData *data;
-@property (readonly) const void *bytes;
-@property (readonly) NSUInteger length;
+@property (nonatomic, readonly, copy) NSData *data;
+@property (nonatomic, readonly) const void *bytes;
+@property (nonatomic, readonly) NSUInteger length;
 /// @}
 
 /// @name Data Format
 /// @{
-@property (assign, readonly) CPTNumericDataType dataType;
-@property (readonly) CPTDataTypeFormat dataTypeFormat;
-@property (readonly) size_t sampleBytes;
-@property (readonly) CFByteOrder byteOrder;
+@property (nonatomic, readonly) CPTNumericDataType dataType;
+@property (nonatomic, readonly) CPTDataTypeFormat dataTypeFormat;
+@property (nonatomic, readonly) size_t sampleBytes;
+@property (nonatomic, readonly) CFByteOrder byteOrder;
 /// @}
 
 /// @name Dimensions
 /// @{
-@property (copy, readonly) NSArray *shape;
-@property (readonly) NSUInteger numberOfDimensions;
-@property (readonly) NSUInteger numberOfSamples;
-@property (readonly) CPTDataOrder dataOrder;
+@property (nonatomic, readonly, copy) NSArray *shape;
+@property (nonatomic, readonly) NSUInteger numberOfDimensions;
+@property (nonatomic, readonly) NSUInteger numberOfSamples;
+@property (nonatomic, readonly) CPTDataOrder dataOrder;
 /// @}
 
 /// @name Factory Methods
 /// @{
-+(id)numericDataWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
-+(id)numericDataWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
-+(id)numericDataWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
-+(id)numericDataWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
++(instancetype)numericDataWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
++(instancetype)numericDataWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
++(instancetype)numericDataWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
++(instancetype)numericDataWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
 
-+(id)numericDataWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
-+(id)numericDataWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
-+(id)numericDataWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
-+(id)numericDataWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
++(instancetype)numericDataWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
++(instancetype)numericDataWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
++(instancetype)numericDataWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
++(instancetype)numericDataWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
 /// @}
 
 /// @name Initialization
 /// @{
--(id)initWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
--(id)initWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
--(id)initWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
--(id)initWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
+-(instancetype)initWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
+-(instancetype)initWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
+-(instancetype)initWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray;
+-(instancetype)initWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray;
 
--(id)initWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
--(id)initWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
--(id)initWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
--(id)initWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
+-(instancetype)initWithData:(NSData *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithData:(NSData *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
+-(instancetype)initWithArray:(NSArray *)newData dataType:(CPTNumericDataType)newDataType shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
+-(instancetype)initWithArray:(NSArray *)newData dataTypeString:(NSString *)newDataTypeString shape:(NSArray *)shapeArray dataOrder:(CPTDataOrder)order;
+
+-(instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
 /// @}
 
 /// @name Samples
