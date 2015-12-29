@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 /// @file
 
 #if __cplusplus

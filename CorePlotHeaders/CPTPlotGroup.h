@@ -2,7 +2,8 @@
 
 @class CPTPlot;
 
-@interface CPTPlotGroup : CPTLayer
+@interface CPTPlotGroup : CPTLayer {
+}
 
 /// @name Adding and Removing Plots
 /// @{

@@ -1,5 +1,6 @@
-#import <XCTest/XCTest.h>
+#import <SenTestingKit/SenTestingKit.h>
 
-@interface CPTTestCase : XCTestCase
+@interface CPTTestCase : SenTestCase {
+}
 
 @end

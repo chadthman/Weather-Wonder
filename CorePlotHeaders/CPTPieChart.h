@@ -1,10 +1,13 @@
 #import "CPTDefinitions.h"
 #import "CPTPlot.h"
+#import <Foundation/Foundation.h>
 
 /// @file
 
 @class CPTColor;
 @class CPTFill;
+@class CPTMutableNumericData;
+@class CPTNumericData;
 @class CPTPieChart;
 @class CPTTextLayer;
 @class CPTLineStyle;
@@ -19,19 +22,21 @@ extern NSString *const CPTPieChartBindingPieSliceRadialOffsets;
 /**
  *  @brief Enumeration of pie chart data source field types.
  **/
-typedef NS_ENUM (NSInteger, CPTPieChartField) {
+typedef enum _CPTPieChartField {
     CPTPieChartFieldSliceWidth,           ///< Pie slice width.
     CPTPieChartFieldSliceWidthNormalized, ///< Pie slice width normalized [0, 1].
     CPTPieChartFieldSliceWidthSum         ///< Cumulative sum of pie slice widths.
-};
+}
+CPTPieChartField;
 
 /**
  *  @brief Enumeration of pie slice drawing directions.
  **/
-typedef NS_ENUM (NSInteger, CPTPieDirection) {
+typedef enum _CPTPieDirection {
     CPTPieDirectionClockwise,       ///< Pie slices are drawn in a clockwise direction.
     CPTPieDirectionCounterClockwise ///< Pie slices are drawn in a counter-clockwise direction.
-};
+}
+CPTPieDirection;
 
 #pragma mark -
 
@@ -47,7 +52,7 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
 /** @brief @optional Gets a range of slice fills for the given pie chart.
  *  @param pieChart The pie chart.
  *  @param indexRange The range of the data indexes of interest.
- *  @return An array of pie slice fills.
+ *  @return The pie slice fill for the slice with the given index.
  **/
 -(NSArray *)sliceFillsForPieChart:(CPTPieChart *)pieChart recordIndexRange:(NSRange)indexRange;
 
@@ -57,8 +62,7 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
  *  is also implemented in the datasource.
  *  @param pieChart The pie chart.
  *  @param idx The data index of interest.
- *  @return The pie slice fill for the slice with the given index. If the datasource returns @nil, the default fill is used.
- *  If the data source returns an NSNull object, no fill is drawn.
+ *  @return The pie slice fill for the slice with the given index.
  **/
 -(CPTFill *)sliceFillForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx;
 
@@ -96,13 +100,6 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
  **/
 -(NSString *)legendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx;
 
-/** @brief @optional Gets the styled legend title for the given pie chart slice.
- *  @param pieChart The pie chart.
- *  @param idx The data index of interest.
- *  @return The styled title text for the legend entry for the point with the given index.
- **/
--(NSAttributedString *)attributedLegendTitleForPieChart:(CPTPieChart *)pieChart recordIndex:(NSUInteger)idx;
-
 /// @}
 @end
 
@@ -118,9 +115,9 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
 /// @name Slice Selection
 /// @{
 
-/** @brief @optional Informs the delegate that a pie slice
- *  @if MacOnly was both pressed and released. @endif
- *  @if iOSOnly received both the touch down and up events. @endif
+/** @brief @optional Informs the delegate that a pie slice was
+ *  @if MacOnly clicked. @endif
+ *  @if iOSOnly touched. @endif
  *  @param plot The pie chart.
  *  @param idx The index of the
  *  @if MacOnly clicked pie slice. @endif
@@ -128,9 +125,9 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
  **/
 -(void)pieChart:(CPTPieChart *)plot sliceWasSelectedAtRecordIndex:(NSUInteger)idx;
 
-/** @brief @optional Informs the delegate that a pie slice
- *  @if MacOnly was both pressed and released. @endif
- *  @if iOSOnly received both the touch down and up events. @endif
+/** @brief @optional Informs the delegate that a pie slice was
+ *  @if MacOnly clicked. @endif
+ *  @if iOSOnly touched. @endif
  *  @param plot The pie chart.
  *  @param idx The index of the
  *  @if MacOnly clicked pie slice. @endif
@@ -139,55 +136,24 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
  **/
 -(void)pieChart:(CPTPieChart *)plot sliceWasSelectedAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
 
-/** @brief @optional Informs the delegate that a pie slice
- *  @if MacOnly was pressed. @endif
- *  @if iOSOnly touch started. @endif
- *  @param plot The pie chart.
- *  @param idx The index of the
- *  @if MacOnly clicked pie slice. @endif
- *  @if iOSOnly touched pie slice. @endif
- **/
--(void)pieChart:(CPTPieChart *)plot sliceTouchDownAtRecordIndex:(NSUInteger)idx;
-
-/** @brief @optional Informs the delegate that a pie slice
- *  @if MacOnly was pressed. @endif
- *  @if iOSOnly touch started. @endif
- *  @param plot The pie chart.
- *  @param idx The index of the
- *  @if MacOnly clicked pie slice. @endif
- *  @if iOSOnly touched pie slice. @endif
- *  @param event The event that triggered the selection.
- **/
--(void)pieChart:(CPTPieChart *)plot sliceTouchDownAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
-
-/** @brief @optional Informs the delegate that a pie slice
- *  @if MacOnly was released. @endif
- *  @if iOSOnly touch ended. @endif
- *  @param plot The pie chart.
- *  @param idx The index of the
- *  @if MacOnly clicked pie slice. @endif
- *  @if iOSOnly touched pie slice. @endif
- **/
--(void)pieChart:(CPTPieChart *)plot sliceTouchUpAtRecordIndex:(NSUInteger)idx;
-
-/** @brief @optional Informs the delegate that a pie slice
- *  @if MacOnly was released. @endif
- *  @if iOSOnly touch ended. @endif
- *  @param plot The pie chart.
- *  @param idx The index of the
- *  @if MacOnly clicked pie slice. @endif
- *  @if iOSOnly touched pie slice. @endif
- *  @param event The event that triggered the selection.
- **/
--(void)pieChart:(CPTPieChart *)plot sliceTouchUpAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
-
 /// @}
 
 @end
 
 #pragma mark -
 
-@interface CPTPieChart : CPTPlot
+@interface CPTPieChart : CPTPlot {
+    @private
+    CGFloat pieRadius;
+    CGFloat pieInnerRadius;
+    CGFloat startAngle;
+    CGFloat endAngle;
+    CPTPieDirection sliceDirection;
+    CGPoint centerAnchor;
+    CPTLineStyle *borderLineStyle;
+    CPTFill *overlayFill;
+    BOOL labelRotationRelativeToRadius;
+}
 
 /// @name Appearance
 /// @{
@@ -210,22 +176,10 @@ typedef NS_ENUM (NSInteger, CPTPieDirection) {
 @property (nonatomic, readwrite, assign) BOOL labelRotationRelativeToRadius;
 /// @}
 
-/// @name Slice Style
-/// @{
--(void)reloadSliceFills;
--(void)reloadSliceFillsInIndexRange:(NSRange)indexRange;
-/// @}
-
-/// @name Slice Layout
-/// @{
--(void)reloadRadialOffsets;
--(void)reloadRadialOffsetsInIndexRange:(NSRange)indexRange;
-/// @}
-
 /// @name Information
 /// @{
 -(NSUInteger)pieSliceIndexAtAngle:(CGFloat)angle;
--(CGFloat)medianAngleForPieSliceIndex:(NSUInteger)idx;
+-(CGFloat)medianAngleForPieSliceIndex:(NSUInteger)index;
 /// @}
 
 /// @name Factory Methods

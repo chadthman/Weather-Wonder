@@ -1,13 +1,18 @@
 #import "CPTLayer.h"
+#import <Foundation/Foundation.h>
 
 @class CPTAxis;
 @class CPTLineStyle;
 
-@interface CPTAxisSet : CPTLayer
+@interface CPTAxisSet : CPTLayer {
+    @private
+    NSArray *axes;
+    CPTLineStyle *borderLineStyle;
+}
 
 /// @name Axes
 /// @{
-@property (nonatomic, readwrite, strong) NSArray *axes;
+@property (nonatomic, readwrite, retain) NSArray *axes;
 /// @}
 
 /// @name Drawing

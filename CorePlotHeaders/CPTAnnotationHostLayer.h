@@ -2,9 +2,12 @@
 
 @class CPTAnnotation;
 
-@interface CPTAnnotationHostLayer : CPTLayer
+@interface CPTAnnotationHostLayer : CPTLayer {
+    @private
+    NSMutableArray *mutableAnnotations;
+}
 
-@property (nonatomic, readonly) NSArray *annotations;
+@property (nonatomic, readonly, retain) NSArray *annotations;
 
 /// @name Annotations
 /// @{

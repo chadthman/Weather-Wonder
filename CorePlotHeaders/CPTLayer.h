@@ -1,5 +1,6 @@
 #import "CPTDefinitions.h"
 #import "CPTResponder.h"
+#import <Foundation/Foundation.h>
 #import <QuartzCore/QuartzCore.h>
 
 @class CPTGraph;
@@ -15,7 +16,21 @@ extern NSString *const CPTLayerBoundsDidChangeNotification;
 
 /// @}
 
-@interface CPTLayer : CALayer<CPTResponder>
+@interface CPTLayer : CALayer<CPTResponder> {
+    @private
+    CGFloat paddingLeft;
+    CGFloat paddingTop;
+    CGFloat paddingRight;
+    CGFloat paddingBottom;
+    BOOL masksToBorder;
+    CPTShadow *shadow;
+    BOOL renderingRecursively;
+    BOOL useFastRendering;
+    __cpt_weak CPTGraph *graph;
+    CGPathRef outerBorderPath;
+    CGPathRef innerBorderPath;
+    id<NSCopying, NSCoding, NSObject> identifier;
+}
 
 /// @name Graph
 /// @{
@@ -32,10 +47,9 @@ extern NSString *const CPTLayerBoundsDidChangeNotification;
 
 /// @name Drawing
 /// @{
-@property (readwrite) CGFloat contentsScale;
-@property (nonatomic, readonly) BOOL useFastRendering;
+@property (readwrite, assign) CGFloat contentsScale;
+@property (nonatomic, readonly, assign) BOOL useFastRendering;
 @property (nonatomic, readwrite, copy) CPTShadow *shadow;
-@property (nonatomic, readonly) CGSize shadowMargin;
 /// @}
 
 /// @name Masking
@@ -43,8 +57,8 @@ extern NSString *const CPTLayerBoundsDidChangeNotification;
 @property (nonatomic, readwrite, assign) BOOL masksToBorder;
 @property (nonatomic, readwrite, assign) CGPathRef outerBorderPath;
 @property (nonatomic, readwrite, assign) CGPathRef innerBorderPath;
-@property (nonatomic, readonly) CGPathRef maskingPath;
-@property (nonatomic, readonly) CGPathRef sublayerMaskingPath;
+@property (nonatomic, readonly, assign) CGPathRef maskingPath;
+@property (nonatomic, readonly, assign) CGPathRef sublayerMaskingPath;
 /// @}
 
 /// @name Identification
@@ -54,14 +68,12 @@ extern NSString *const CPTLayerBoundsDidChangeNotification;
 
 /// @name Layout
 /// @{
-@property (nonatomic, readonly) NSSet *sublayersExcludedFromAutomaticLayout;
+@property (readonly) NSSet *sublayersExcludedFromAutomaticLayout;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithFrame:(CGRect)newFrame NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder *)coder NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithLayer:(id)layer NS_DESIGNATED_INITIALIZER;
+-(id)initWithFrame:(CGRect)newFrame;
 /// @}
 
 /// @name Drawing
@@ -90,3 +102,18 @@ extern NSString *const CPTLayerBoundsDidChangeNotification;
 /// @}
 
 @end
+
+/// @cond
+// for MacOS 10.6 SDK compatibility
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+#else
+#if MAC_OS_X_VERSION_MAX_ALLOWED < 1070
+@interface CALayer(CPTExtensions)
+
+@property (readwrite) CGFloat contentsScale;
+
+@end
+#endif
+#endif
+
+/// @endcond

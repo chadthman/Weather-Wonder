@@ -1,6 +1,7 @@
 #import "CPTPlotRange.h"
 
-@interface CPTMutablePlotRange : CPTPlotRange
+@interface CPTMutablePlotRange : CPTPlotRange {
+}
 
 /// @name Range Limits
 /// @{

@@ -17,31 +17,6 @@
  **/
 extern NSString *const CPTPlotSpaceCoordinateMappingDidChangeNotification;
 
-/** @brief The <code>userInfo</code> dictionary key used by the CPTPlotSpaceCoordinateMappingDidChangeNotification
- *  to indicate the plot coordinate affected by the mapping change.
- *
- *  The value associated with this key is the CPTCoordinate affected by the change wrapped in an instance of NSNumber.
- *  @ingroup notification
- **/
-extern NSString *const CPTPlotSpaceCoordinateKey;
-
-/** @brief The <code>userInfo</code> dictionary key used by the CPTPlotSpaceCoordinateMappingDidChangeNotification
- *  to indicate whether the mapping change is a scroll movement or other change.
- *
- *  The value associated with this key is a boolean value wrapped in an instance of NSNumber. The value
- *  is @YES if the plot space change represents a horizontal or vertical translation, @NO otherwise.
- *  @ingroup notification
- **/
-extern NSString *const CPTPlotSpaceScrollingKey;
-
-/** @brief The <code>userInfo</code> dictionary key used by the CPTPlotSpaceCoordinateMappingDidChangeNotification
- *  to indicate the displacement offset for scrolling changes in drawing coordinates.
- *
- *  The value associated with this key is the displacement offset wrapped in an instance of NSNumber.
- *  @ingroup notification
- **/
-extern NSString *const CPTPlotSpaceDisplacementKey;
-
 /// @}
 
 /**
@@ -104,7 +79,7 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
  *  @param event The native event.
  *  @param point The point in the host view.
  *  @return Whether the plot space should handle the event or not.
- *  In either case, the delegate may choose to take extra actions, or handle the event itself.
+ *  In either case, the delegate may choose to take extra actions, or handle the scaling itself.
  **/
 -(BOOL)plotSpace:(CPTPlotSpace *)space shouldHandlePointingDeviceDownEvent:(CPTNativeEvent *)event atPoint:(CGPoint)point;
 
@@ -113,7 +88,7 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
  *  @param event The native event.
  *  @param point The point in the host view.
  *  @return Whether the plot space should handle the event or not.
- *  In either case, the delegate may choose to take extra actions, or handle the event itself.
+ *  In either case, the delegate may choose to take extra actions, or handle the scaling itself.
  **/
 -(BOOL)plotSpace:(CPTPlotSpace *)space shouldHandlePointingDeviceDraggedEvent:(CPTNativeEvent *)event atPoint:(CGPoint)point;
 
@@ -121,7 +96,7 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
  *  @param space The plot space.
  *  @param event The native event.
  *  @return Whether the plot space should handle the event or not.
- *  In either case, the delegate may choose to take extra actions, or handle the event itself.
+ *  In either case, the delegate may choose to take extra actions, or handle the scaling itself.
  **/
 -(BOOL)plotSpace:(CPTPlotSpace *)space shouldHandlePointingDeviceCancelledEvent:(CPTNativeEvent *)event;
 
@@ -130,23 +105,9 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
  *  @param event The native event.
  *  @param point The point in the host view.
  *  @return Whether the plot space should handle the event or not.
- *  In either case, the delegate may choose to take extra actions, or handle the event itself.
+ *  In either case, the delegate may choose to take extra actions, or handle the scaling itself.
  **/
 -(BOOL)plotSpace:(CPTPlotSpace *)space shouldHandlePointingDeviceUpEvent:(CPTNativeEvent *)event atPoint:(CGPoint)point;
-
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-#else
-
-/** @brief @optional Notifies that plot space intercepted a scroll wheel event.
- *  @param space The plot space.
- *  @param event The native event.
- *  @param fromPoint The The starting point in the host view.
- *  @param toPoint The The ending point in the host view.
- *  @return Whether the plot space should handle the event or not.
- *  In either case, the delegate may choose to take extra actions, or handle the event itself.
- **/
--(BOOL)plotSpace:(CPTPlotSpace *)space shouldHandleScrollWheelEvent:(CPTNativeEvent *)event fromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint;
-#endif
 
 /// @}
 
@@ -154,34 +115,18 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
 
 #pragma mark -
 
-@interface CPTPlotSpace : NSObject<CPTResponder, NSCoding>
+@interface CPTPlotSpace : NSObject<CPTResponder, NSCoding> {
+    @private
+    __cpt_weak CPTGraph *graph;
+    id<NSCopying, NSCoding, NSObject> identifier;
+    __cpt_weak id<CPTPlotSpaceDelegate> delegate;
+    BOOL allowsUserInteraction;
+}
 
 @property (nonatomic, readwrite, copy) id<NSCopying, NSCoding, NSObject> identifier;
-@property (nonatomic, readwrite) BOOL allowsUserInteraction;
-@property (nonatomic, readonly) BOOL isDragging;
+@property (nonatomic, readwrite, assign) BOOL allowsUserInteraction;
 @property (nonatomic, readwrite, cpt_weak_property) __cpt_weak CPTGraph *graph;
 @property (nonatomic, readwrite, cpt_weak_property) __cpt_weak id<CPTPlotSpaceDelegate> delegate;
-
-@property (nonatomic, readonly) NSUInteger numberOfCoordinates;
-
-/// @name Categorical Data
-/// @{
--(void)addCategory:(NSString *)category forCoordinate:(CPTCoordinate)coordinate;
--(void)removeCategory:(NSString *)category forCoordinate:(CPTCoordinate)coordinate;
--(void)insertCategory:(NSString *)category forCoordinate:(CPTCoordinate)coordinate atIndex:(NSUInteger)idx;
--(void)setCategories:(NSArray *)newCategories forCoordinate:(CPTCoordinate)coordinate;
--(void)removeAllCategories;
-
--(NSArray *)categoriesForCoordinate:(CPTCoordinate)coordinate;
--(NSString *)categoryForCoordinate:(CPTCoordinate)coordinate atIndex:(NSUInteger)idx;
--(NSUInteger)indexOfCategory:(NSString *)category forCoordinate:(CPTCoordinate)coordinate;
-/// @}
-
-/// @name Initialization
-/// @{
--(instancetype)init NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
-/// @}
 
 @end
 
@@ -194,16 +139,14 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
 
 /// @name Coordinate Space Conversions
 /// @{
--(CGPoint)plotAreaViewPointForPlotPoint:(NSDecimal *)plotPoint numberOfCoordinates:(NSUInteger)count;
--(CGPoint)plotAreaViewPointForDoublePrecisionPlotPoint:(double *)plotPoint numberOfCoordinates:(NSUInteger)count;
-
--(void)plotPoint:(NSDecimal *)plotPoint numberOfCoordinates:(NSUInteger)count forPlotAreaViewPoint:(CGPoint)point;
--(void)doublePrecisionPlotPoint:(double *)plotPoint numberOfCoordinates:(NSUInteger)count forPlotAreaViewPoint:(CGPoint)point;
+-(CGPoint)plotAreaViewPointForPlotPoint:(NSDecimal *)plotPoint;
+-(CGPoint)plotAreaViewPointForDoublePrecisionPlotPoint:(double *)plotPoint;
+-(void)plotPoint:(NSDecimal *)plotPoint forPlotAreaViewPoint:(CGPoint)point;
+-(void)doublePrecisionPlotPoint:(double *)plotPoint forPlotAreaViewPoint:(CGPoint)point;
 
 -(CGPoint)plotAreaViewPointForEvent:(CPTNativeEvent *)event;
-
--(void)plotPoint:(NSDecimal *)plotPoint numberOfCoordinates:(NSUInteger)count forEvent:(CPTNativeEvent *)event;
--(void)doublePrecisionPlotPoint:(double *)plotPoint numberOfCoordinates:(NSUInteger)count forEvent:(CPTNativeEvent *)event;
+-(void)plotPoint:(NSDecimal *)plotPoint forEvent:(CPTNativeEvent *)event;
+-(void)doublePrecisionPlotPoint:(double *)plotPoint forEvent:(CPTNativeEvent *)event;
 /// @}
 
 /// @name Coordinate Range
@@ -221,7 +164,6 @@ extern NSString *const CPTPlotSpaceDisplacementKey;
 /// @name Adjusting Ranges
 /// @{
 -(void)scaleToFitPlots:(NSArray *)plots;
--(void)scaleToFitPlots:(NSArray *)plots forCoordinate:(CPTCoordinate)coordinate;
 -(void)scaleBy:(CGFloat)interactionScale aboutPoint:(CGPoint)interactionPoint;
 /// @}
 

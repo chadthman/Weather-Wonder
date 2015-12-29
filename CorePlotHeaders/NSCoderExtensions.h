@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 /** @category NSCoder(CPTExtensions)
  *  @brief Core Plot extensions to NSCoder.
  **/

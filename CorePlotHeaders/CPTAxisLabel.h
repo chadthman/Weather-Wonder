@@ -1,11 +1,19 @@
 #import "CPTDefinitions.h"
+#import <Foundation/Foundation.h>
 
 @class CPTLayer;
 @class CPTTextStyle;
 
-@interface CPTAxisLabel : NSObject<NSCoding>
+@interface CPTAxisLabel : NSObject<NSCoding> {
+    @private
+    CPTLayer *contentLayer;
+    CGFloat offset;
+    CGFloat rotation;
+    CPTAlignment alignment;
+    NSDecimal tickLocation;
+}
 
-@property (nonatomic, readwrite, strong) CPTLayer *contentLayer;
+@property (nonatomic, readwrite, retain) CPTLayer *contentLayer;
 @property (nonatomic, readwrite, assign) CGFloat offset;
 @property (nonatomic, readwrite, assign) CGFloat rotation;
 @property (nonatomic, readwrite, assign) CPTAlignment alignment;
@@ -13,9 +21,8 @@
 
 /// @name Initialization
 /// @{
--(instancetype)initWithText:(NSString *)newText textStyle:(CPTTextStyle *)style;
--(instancetype)initWithContentLayer:(CPTLayer *)layer NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
+-(id)initWithText:(NSString *)newText textStyle:(CPTTextStyle *)style;
+-(id)initWithContentLayer:(CPTLayer *)layer;
 /// @}
 
 /// @name Layout

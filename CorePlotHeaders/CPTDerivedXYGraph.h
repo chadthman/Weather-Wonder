@@ -1,5 +1,6 @@
 #import "CPTXYGraph.h"
 
-@interface CPTDerivedXYGraph : CPTXYGraph
+@interface CPTDerivedXYGraph : CPTXYGraph {
+}
 
 @end

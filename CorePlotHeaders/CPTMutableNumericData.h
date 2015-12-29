@@ -1,16 +1,18 @@
 #import "CPTNumericData.h"
 #import "CPTNumericDataType.h"
+#import <Foundation/Foundation.h>
 
-@interface CPTMutableNumericData : CPTNumericData
+@interface CPTMutableNumericData : CPTNumericData {
+}
 
 /// @name Data Buffer
 /// @{
-@property (nonatomic, readonly) void *mutableBytes;
+@property (readonly) void *mutableBytes;
 /// @}
 
 /// @name Dimensions
 /// @{
-@property (nonatomic, readwrite, copy) NSArray *shape;
+@property (copy, readwrite) NSArray *shape;
 /// @}
 
 @end

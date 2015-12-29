@@ -1,9 +1,3 @@
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
-#import "CPTAnimation.h"
-#import "CPTAnimationOperation.h"
-#import "CPTAnimationPeriod.h"
 #import "CPTAnnotation.h"
 #import "CPTAnnotationHostLayer.h"
 #import "CPTAxis.h"
@@ -19,7 +13,6 @@
 #import "CPTDefinitions.h"
 #import "CPTExceptions.h"
 #import "CPTFill.h"
-#import "CPTFunctionDataSource.h"
 #import "CPTGradient.h"
 #import "CPTGraph.h"
 #import "CPTGraphHostingView.h"

@@ -1,5 +1,6 @@
 #import "CPTNumericData.h"
 #import "CPTNumericDataType.h"
+#import <Foundation/Foundation.h>
 
 /** @category CPTNumericData(TypeConversion)
  *  @brief Type conversion methods for CPTNumericData.

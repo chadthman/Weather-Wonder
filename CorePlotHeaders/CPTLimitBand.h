@@ -1,20 +1,25 @@
+#import <Foundation/Foundation.h>
+
 @class CPTPlotRange;
 @class CPTFill;
 
-@interface CPTLimitBand : NSObject<NSCoding, NSCopying>
+@interface CPTLimitBand : NSObject<NSCoding, NSCopying> {
+    @private
+    CPTPlotRange *range;
+    CPTFill *fill;
+}
 
-@property (nonatomic, readwrite, strong) CPTPlotRange *range;
-@property (nonatomic, readwrite, strong) CPTFill *fill;
+@property (nonatomic, readwrite, retain) CPTPlotRange *range;
+@property (nonatomic, readwrite, retain) CPTFill *fill;
 
 /// @name Factory Methods
 /// @{
-+(instancetype)limitBandWithRange:(CPTPlotRange *)newRange fill:(CPTFill *)newFill;
++(CPTLimitBand *)limitBandWithRange:(CPTPlotRange *)newRange fill:(CPTFill *)newFill;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithRange:(CPTPlotRange *)newRange fill:(CPTFill *)newFill NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
+-(id)initWithRange:(CPTPlotRange *)newRange fill:(CPTFill *)newFill;
 /// @}
 
 @end

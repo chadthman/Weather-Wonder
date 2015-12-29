@@ -1,17 +1,21 @@
-@interface CPTConstraints : NSObject<NSCoding, NSCopying>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
+@interface CPTConstraints : NSObject<NSCoding, NSCopying> {
+}
 
 /// @name Factory Methods
 /// @{
-+(instancetype)constraintWithLowerOffset:(CGFloat)newOffset;
-+(instancetype)constraintWithUpperOffset:(CGFloat)newOffset;
-+(instancetype)constraintWithRelativeOffset:(CGFloat)newOffset;
++(CPTConstraints *)constraintWithLowerOffset:(CGFloat)newOffset;
++(CPTConstraints *)constraintWithUpperOffset:(CGFloat)newOffset;
++(CPTConstraints *)constraintWithRelativeOffset:(CGFloat)newOffset;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithLowerOffset:(CGFloat)newOffset;
--(instancetype)initWithUpperOffset:(CGFloat)newOffset;
--(instancetype)initWithRelativeOffset:(CGFloat)newOffset;
+-(id)initWithLowerOffset:(CGFloat)newOffset;
+-(id)initWithUpperOffset:(CGFloat)newOffset;
+-(id)initWithRelativeOffset:(CGFloat)newOffset;
 /// @}
 
 @end

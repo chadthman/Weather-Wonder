@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 #import <Availability.h>
 #import <TargetConditionals.h>
 
@@ -44,16 +47,6 @@
 #endif
 #define cpt_weak_property assign
 #endif
-
-// Deprecated method attribute
-
-/**
- *  @def cpt_deprecated
- *  @hideinitializer
- *  @brief Marks a method declaration as deprecated.
- **/
-
-#define cpt_deprecated __attribute__( (deprecated) )
 
 // Type safety defines
 
@@ -107,41 +100,44 @@
 /**
  *  @brief Enumeration of numeric types
  **/
-typedef NS_ENUM (NSInteger, CPTNumericType) {
+typedef enum  _CPTNumericType {
     CPTNumericTypeInteger, ///< Integer
     CPTNumericTypeFloat,   ///< Float
     CPTNumericTypeDouble   ///< Double
-};
+}
+CPTNumericType;
 
 /**
  *  @brief Enumeration of error bar types
  **/
-typedef NS_ENUM (NSInteger, CPTErrorBarType) {
+typedef enum _CPTErrorBarType {
     CPTErrorBarTypeCustom,        ///< Custom error bars
     CPTErrorBarTypeConstantRatio, ///< Constant ratio error bars
     CPTErrorBarTypeConstantValue  ///< Constant value error bars
-};
+}
+CPTErrorBarType;
 
 /**
  *  @brief Enumeration of axis scale types
  **/
-typedef NS_ENUM (NSInteger, CPTScaleType) {
+typedef enum _CPTScaleType {
     CPTScaleTypeLinear,   ///< Linear axis scale
     CPTScaleTypeLog,      ///< Logarithmic axis scale
     CPTScaleTypeAngular,  ///< Angular axis scale (not implemented)
     CPTScaleTypeDateTime, ///< Date/time axis scale (not implemented)
-    CPTScaleTypeCategory  ///< Category axis scale
-};
+    CPTScaleTypeCategory  ///< Category axis scale (not implemented)
+}
+CPTScaleType;
 
 /**
  *  @brief Enumeration of axis coordinates
  **/
-typedef NS_ENUM (NSInteger, CPTCoordinate) {
-    CPTCoordinateX    = 0,           ///< X axis
-    CPTCoordinateY    = 1,           ///< Y axis
-    CPTCoordinateZ    = 2,           ///< Z axis
-    CPTCoordinateNone = NSIntegerMax ///< Invalid coordinate value
-};
+typedef enum _CPTCoordinate {
+    CPTCoordinateX = 0, ///< X axis
+    CPTCoordinateY = 1, ///< Y axis
+    CPTCoordinateZ = 2  ///< Z axis
+}
+CPTCoordinate;
 
 /**
  *  @brief RGBA color for gradients
@@ -157,16 +153,17 @@ CPTRGBAColor;
 /**
  *  @brief Enumeration of label positioning offset directions
  **/
-typedef NS_ENUM (NSInteger, CPTSign) {
+typedef enum _CPTSign {
     CPTSignNone     = 0,  ///< No offset
     CPTSignPositive = +1, ///< Positive offset
     CPTSignNegative = -1  ///< Negative offset
-};
+}
+CPTSign;
 
 /**
  *  @brief Locations around the edge of a rectangle.
  **/
-typedef NS_ENUM (NSInteger, CPTRectAnchor) {
+typedef enum _CPTRectAnchor {
     CPTRectAnchorBottomLeft,  ///< The bottom left corner
     CPTRectAnchorBottom,      ///< The bottom center
     CPTRectAnchorBottomRight, ///< The bottom right corner
@@ -176,29 +173,18 @@ typedef NS_ENUM (NSInteger, CPTRectAnchor) {
     CPTRectAnchorTop,         ///< The top center
     CPTRectAnchorTopRight,    ///< The top right
     CPTRectAnchorCenter       ///< The center of the rect
-};
+}
+CPTRectAnchor;
 
 /**
  *  @brief Label and constraint alignment constants.
  **/
-typedef NS_ENUM (NSInteger, CPTAlignment) {
+typedef enum _CPTAlignment {
     CPTAlignmentLeft,   ///< Align horizontally to the left side.
     CPTAlignmentCenter, ///< Align horizontally to the center.
     CPTAlignmentRight,  ///< Align horizontally to the right side.
     CPTAlignmentTop,    ///< Align vertically to the top.
     CPTAlignmentMiddle, ///< Align vertically to the middle.
     CPTAlignmentBottom  ///< Align vertically to the bottom.
-};
-
-/**
- *  @brief Edge inset distances for stretchable images.
- **/
-typedef struct _CPTEdgeInsets {
-    CGFloat top;    ///< The top inset.
-    CGFloat left;   ///< The left inset.
-    CGFloat bottom; ///< The bottom inset.
-    CGFloat right;  ///< The right inset.
 }
-CPTEdgeInsets;
-
-extern const CPTEdgeInsets CPTEdgeInsetsZero; ///< Defines a set of stretchable image edge insets where all of the values are zero (@num{0}).
+CPTAlignment;

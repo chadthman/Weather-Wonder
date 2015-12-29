@@ -1,21 +1,25 @@
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 @class CPTGradient;
 @class CPTImage;
 @class CPTColor;
 
-@interface CPTFill : NSObject<NSCopying, NSCoding>
+@interface CPTFill : NSObject<NSCopying, NSCoding> {
+}
 
 /// @name Factory Methods
 /// @{
-+(instancetype)fillWithColor:(CPTColor *)aColor;
-+(instancetype)fillWithGradient:(CPTGradient *)aGradient;
-+(instancetype)fillWithImage:(CPTImage *)anImage;
++(CPTFill *)fillWithColor:(CPTColor *)aColor;
++(CPTFill *)fillWithGradient:(CPTGradient *)aGradient;
++(CPTFill *)fillWithImage:(CPTImage *)anImage;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithColor:(CPTColor *)aColor;
--(instancetype)initWithGradient:(CPTGradient *)aGradient;
--(instancetype)initWithImage:(CPTImage *)anImage;
+-(id)initWithColor:(CPTColor *)aColor;
+-(id)initWithGradient:(CPTGradient *)aGradient;
+-(id)initWithImage:(CPTImage *)anImage;
 /// @}
 
 @end
@@ -24,9 +28,6 @@
  *  @brief CPTFill abstract methods—must be overridden by subclasses
  **/
 @interface CPTFill(AbstractMethods)
-
-@property (nonatomic, readonly, getter = isOpaque) BOOL opaque;
-@property (nonatomic, readonly) CGColorRef cgColor;
 
 /// @name Drawing
 /// @{

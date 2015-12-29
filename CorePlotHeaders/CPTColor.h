@@ -1,38 +1,42 @@
-@interface CPTColor : NSObject<NSCopying, NSCoding>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
-@property (nonatomic, readonly) CGColorRef cgColor;
-@property (nonatomic, readonly, getter = isOpaque) BOOL opaque;
+@interface CPTColor : NSObject<NSCopying, NSCoding> {
+    @private
+    CGColorRef cgColor;
+}
+
+@property (nonatomic, readonly, assign) CGColorRef cgColor;
 
 /// @name Factory Methods
 /// @{
-+(instancetype)clearColor;
-+(instancetype)whiteColor;
-+(instancetype)lightGrayColor;
-+(instancetype)grayColor;
-+(instancetype)darkGrayColor;
-+(instancetype)blackColor;
-+(instancetype)redColor;
-+(instancetype)greenColor;
-+(instancetype)blueColor;
-+(instancetype)cyanColor;
-+(instancetype)yellowColor;
-+(instancetype)magentaColor;
-+(instancetype)orangeColor;
-+(instancetype)purpleColor;
-+(instancetype)brownColor;
++(CPTColor *)clearColor;
++(CPTColor *)whiteColor;
++(CPTColor *)lightGrayColor;
++(CPTColor *)grayColor;
++(CPTColor *)darkGrayColor;
++(CPTColor *)blackColor;
++(CPTColor *)redColor;
++(CPTColor *)greenColor;
++(CPTColor *)blueColor;
++(CPTColor *)cyanColor;
++(CPTColor *)yellowColor;
++(CPTColor *)magentaColor;
++(CPTColor *)orangeColor;
++(CPTColor *)purpleColor;
++(CPTColor *)brownColor;
 
-+(instancetype)colorWithCGColor:(CGColorRef)newCGColor;
-+(instancetype)colorWithComponentRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
-+(instancetype)colorWithGenericGray:(CGFloat)gray;
++(CPTColor *)colorWithCGColor:(CGColorRef)newCGColor;
++(CPTColor *)colorWithComponentRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
++(CPTColor *)colorWithGenericGray:(CGFloat)gray;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithCGColor:(CGColorRef)cgColor NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithComponentRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
--(instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
+-(id)initWithCGColor:(CGColorRef)cgColor;
+-(id)initWithComponentRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 
--(instancetype)colorWithAlphaComponent:(CGFloat)alpha;
+-(CPTColor *)colorWithAlphaComponent:(CGFloat)alpha;
 /// @}
 
 @end

@@ -1,3 +1,6 @@
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 /// @file
 
 @class CPTLineStyle;
@@ -6,7 +9,7 @@
 /**
  *  @brief Line cap types.
  **/
-typedef NS_ENUM (NSInteger, CPTLineCapType) {
+typedef enum _CPTLineCapType {
     CPTLineCapTypeNone,       ///< No line cap.
     CPTLineCapTypeOpenArrow,  ///< Open arrow line cap.
     CPTLineCapTypeSolidArrow, ///< Solid arrow line cap.
@@ -20,32 +23,42 @@ typedef NS_ENUM (NSInteger, CPTLineCapType) {
     CPTLineCapTypeCross,      ///< X line cap.
     CPTLineCapTypeSnow,       ///< Snowflake line cap.
     CPTLineCapTypeCustom      ///< Custom line cap.
-};
+}
+CPTLineCapType;
 
-@interface CPTLineCap : NSObject<NSCoding, NSCopying>
+@interface CPTLineCap : NSObject<NSCoding, NSCopying> {
+    @private
+    CGSize size;
+    CPTLineCapType lineCapType;
+    CPTLineStyle *lineStyle;
+    CPTFill *fill;
+    CGPathRef cachedLineCapPath;
+    CGPathRef customLineCapPath;
+    BOOL usesEvenOddClipRule;
+}
 
 @property (nonatomic, readwrite, assign) CGSize size;
 @property (nonatomic, readwrite, assign) CPTLineCapType lineCapType;
-@property (nonatomic, readwrite, strong) CPTLineStyle *lineStyle;
-@property (nonatomic, readwrite, strong) CPTFill *fill;
+@property (nonatomic, readwrite, retain) CPTLineStyle *lineStyle;
+@property (nonatomic, readwrite, retain) CPTFill *fill;
 @property (nonatomic, readwrite, assign) CGPathRef customLineCapPath;
 @property (nonatomic, readwrite, assign) BOOL usesEvenOddClipRule;
 
 /// @name Factory Methods
 /// @{
-+(instancetype)lineCap;
-+(instancetype)openArrowPlotLineCap;
-+(instancetype)solidArrowPlotLineCap;
-+(instancetype)sweptArrowPlotLineCap;
-+(instancetype)rectanglePlotLineCap;
-+(instancetype)ellipsePlotLineCap;
-+(instancetype)diamondPlotLineCap;
-+(instancetype)pentagonPlotLineCap;
-+(instancetype)hexagonPlotLineCap;
-+(instancetype)barPlotLineCap;
-+(instancetype)crossPlotLineCap;
-+(instancetype)snowPlotLineCap;
-+(instancetype)customLineCapWithPath:(CGPathRef)aPath;
++(CPTLineCap *)lineCap;
++(CPTLineCap *)openArrowPlotLineCap;
++(CPTLineCap *)solidArrowPlotLineCap;
++(CPTLineCap *)sweptArrowPlotLineCap;
++(CPTLineCap *)rectanglePlotLineCap;
++(CPTLineCap *)ellipsePlotLineCap;
++(CPTLineCap *)diamondPlotLineCap;
++(CPTLineCap *)pentagonPlotLineCap;
++(CPTLineCap *)hexagonPlotLineCap;
++(CPTLineCap *)barPlotLineCap;
++(CPTLineCap *)crossPlotLineCap;
++(CPTLineCap *)snowPlotLineCap;
++(CPTLineCap *)customLineCapWithPath:(CGPathRef)aPath;
 /// @}
 
 /// @name Drawing

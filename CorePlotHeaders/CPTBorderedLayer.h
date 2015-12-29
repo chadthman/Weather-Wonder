@@ -1,9 +1,15 @@
 #import "CPTAnnotationHostLayer.h"
+#import <Foundation/Foundation.h>
 
 @class CPTLineStyle;
 @class CPTFill;
 
-@interface CPTBorderedLayer : CPTAnnotationHostLayer
+@interface CPTBorderedLayer : CPTAnnotationHostLayer {
+    @private
+    CPTLineStyle *borderLineStyle;
+    CPTFill *fill;
+    BOOL inLayout;
+}
 
 /// @name Drawing
 /// @{
@@ -18,7 +24,7 @@
 
 /// @name Drawing
 /// @{
--(void)renderBorderedLayerAsVectorInContext:(CGContextRef)context;
+-(void)renderBorderedLayer:(CPTBorderedLayer *)layer asVectorInContext:(CGContextRef)context;
 /// @}
 
 @end

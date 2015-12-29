@@ -1,17 +1,25 @@
 #import "CPTDefinitions.h"
+#import <Foundation/Foundation.h>
 
 /// @file
 
 /**
  *  @brief Enumeration of possible results of a plot range comparison.
  **/
-typedef NS_ENUM (NSInteger, CPTPlotRangeComparisonResult) {
+typedef enum _CPTPlotRangeComparisonResult {
     CPTPlotRangeComparisonResultNumberBelowRange, ///< Number is below the range.
     CPTPlotRangeComparisonResultNumberInRange,    ///< Number is in the range.
     CPTPlotRangeComparisonResultNumberAboveRange  ///< Number is above the range.
-};
+}
+CPTPlotRangeComparisonResult;
 
-@interface CPTPlotRange : NSObject<NSCoding, NSCopying, NSMutableCopying>
+@interface CPTPlotRange : NSObject<NSCoding, NSCopying, NSMutableCopying> {
+    @private
+    NSDecimal location;
+    NSDecimal length;
+    double locationDouble;
+    double lengthDouble;
+}
 
 /// @name Range Limits
 /// @{
@@ -32,20 +40,18 @@ typedef NS_ENUM (NSInteger, CPTPlotRangeComparisonResult) {
 
 /// @name Factory Methods
 /// @{
-+(instancetype)plotRangeWithLocation:(NSDecimal)loc length:(NSDecimal)len;
++(id)plotRangeWithLocation:(NSDecimal)loc length:(NSDecimal)len;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithLocation:(NSDecimal)loc length:(NSDecimal)len NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
+-(id)initWithLocation:(NSDecimal)loc length:(NSDecimal)len;
 /// @}
 
 /// @name Checking Ranges
 /// @{
 -(BOOL)contains:(NSDecimal)number;
 -(BOOL)containsDouble:(double)number;
--(BOOL)containsNumber:(NSNumber *)number;
 -(BOOL)isEqualToRange:(CPTPlotRange *)otherRange;
 -(BOOL)containsRange:(CPTPlotRange *)otherRange;
 -(BOOL)intersectsRange:(CPTPlotRange *)otherRange;

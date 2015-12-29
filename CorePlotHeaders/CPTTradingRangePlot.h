@@ -1,9 +1,12 @@
 #import "CPTDefinitions.h"
 #import "CPTPlot.h"
+#import <Foundation/Foundation.h>
 
 /// @file
 
 @class CPTLineStyle;
+@class CPTMutableNumericData;
+@class CPTNumericData;
 @class CPTTradingRangePlot;
 @class CPTFill;
 
@@ -24,21 +27,23 @@ extern NSString *const CPTTradingRangePlotBindingDecreaseLineStyles;
 /**
  *  @brief Enumeration of Quote plot render style types.
  **/
-typedef NS_ENUM (NSInteger, CPTTradingRangePlotStyle) {
+typedef enum _CPTTradingRangePlotStyle {
     CPTTradingRangePlotStyleOHLC,       ///< Open-High-Low-Close (OHLC) plot.
     CPTTradingRangePlotStyleCandleStick ///< Candlestick plot.
-};
+}
+CPTTradingRangePlotStyle;
 
 /**
  *  @brief Enumeration of Quote plot data source field types.
  **/
-typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
+typedef enum _CPTTradingRangePlotField {
     CPTTradingRangePlotFieldX,    ///< X values.
     CPTTradingRangePlotFieldOpen, ///< Open values.
     CPTTradingRangePlotFieldHigh, ///< High values.
     CPTTradingRangePlotFieldLow,  ///< Low values.
     CPTTradingRangePlotFieldClose ///< Close values.
-};
+}
+CPTTradingRangePlotField;
 
 #pragma mark -
 
@@ -71,6 +76,7 @@ typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
 
 /** @brief @optional Gets a range of fills used with a candlestick plot when close < open for the given plot.
  *  @param plot The trading range plot.
+ *  @param indexRange The range of the data indexes of interest.
  *  @param indexRange The range of the data indexes of interest.
  **/
 -(NSArray *)decreaseFillsForTradingRangePlot:(CPTTradingRangePlot *)plot recordIndexRange:(NSRange)indexRange;
@@ -161,9 +167,9 @@ typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
 /// @name Point Selection
 /// @{
 
-/** @brief @optional Informs the delegate that a bar
- *  @if MacOnly was both pressed and released. @endif
- *  @if iOSOnly received both the touch down and up events. @endif
+/** @brief @optional Informs the delegate that a bar was
+ *  @if MacOnly clicked. @endif
+ *  @if iOSOnly touched. @endif
  *  @param plot The trading range plot.
  *  @param idx The index of the
  *  @if MacOnly clicked bar. @endif
@@ -171,9 +177,9 @@ typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
  **/
 -(void)tradingRangePlot:(CPTTradingRangePlot *)plot barWasSelectedAtRecordIndex:(NSUInteger)idx;
 
-/** @brief @optional Informs the delegate that a bar
- *  @if MacOnly was both pressed and released. @endif
- *  @if iOSOnly received both the touch down and up events. @endif
+/** @brief @optional Informs the delegate that a bar was
+ *  @if MacOnly clicked. @endif
+ *  @if iOSOnly touched. @endif
  *  @param plot The trading range plot.
  *  @param idx The index of the
  *  @if MacOnly clicked bar. @endif
@@ -182,55 +188,26 @@ typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
  **/
 -(void)tradingRangePlot:(CPTTradingRangePlot *)plot barWasSelectedAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
 
-/** @brief @optional Informs the delegate that a bar
- *  @if MacOnly was pressed. @endif
- *  @if iOSOnly touch started. @endif
- *  @param plot The trading range plot.
- *  @param idx The index of the
- *  @if MacOnly clicked bar. @endif
- *  @if iOSOnly touched bar. @endif
- **/
--(void)tradingRangePlot:(CPTTradingRangePlot *)plot barTouchDownAtRecordIndex:(NSUInteger)idx;
-
-/** @brief @optional Informs the delegate that a bar
- *  @if MacOnly was pressed. @endif
- *  @if iOSOnly touch started. @endif
- *  @param plot The trading range plot.
- *  @param idx The index of the
- *  @if MacOnly clicked bar. @endif
- *  @if iOSOnly touched bar. @endif
- *  @param event The event that triggered the selection.
- **/
--(void)tradingRangePlot:(CPTTradingRangePlot *)plot barTouchDownAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
-
-/** @brief @optional Informs the delegate that a bar
- *  @if MacOnly was released. @endif
- *  @if iOSOnly touch ended. @endif
- *  @param plot The trading range plot.
- *  @param idx The index of the
- *  @if MacOnly clicked bar. @endif
- *  @if iOSOnly touched bar. @endif
- **/
--(void)tradingRangePlot:(CPTTradingRangePlot *)plot barTouchUpAtRecordIndex:(NSUInteger)idx;
-
-/** @brief @optional Informs the delegate that a bar
- *  @if MacOnly was released. @endif
- *  @if iOSOnly touch ended. @endif
- *  @param plot The trading range plot.
- *  @param idx The index of the
- *  @if MacOnly clicked bar. @endif
- *  @if iOSOnly touched bar. @endif
- *  @param event The event that triggered the selection.
- **/
--(void)tradingRangePlot:(CPTTradingRangePlot *)plot barTouchUpAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
-
 /// @}
 
 @end
 
 #pragma mark -
 
-@interface CPTTradingRangePlot : CPTPlot
+@interface CPTTradingRangePlot : CPTPlot {
+    @private
+    CPTLineStyle *lineStyle;
+    CPTLineStyle *increaseLineStyle;
+    CPTLineStyle *decreaseLineStyle;
+    CPTFill *increaseFill;
+    CPTFill *decreaseFill;
+
+    CPTTradingRangePlotStyle plotStyle;
+
+    CGFloat barWidth;
+    CGFloat stickLength;
+    CGFloat barCornerRadius;
+}
 
 /// @name Appearance
 /// @{
@@ -238,7 +215,6 @@ typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
 @property (nonatomic, readwrite, assign) CGFloat barWidth;    // In view coordinates
 @property (nonatomic, readwrite, assign) CGFloat stickLength; // In view coordinates
 @property (nonatomic, readwrite, assign) CGFloat barCornerRadius;
-@property (nonatomic, readwrite, assign) BOOL showBarBorder;
 /// @}
 
 /// @name Drawing
@@ -248,14 +224,6 @@ typedef NS_ENUM (NSInteger, CPTTradingRangePlotField) {
 @property (nonatomic, readwrite, copy) CPTLineStyle *decreaseLineStyle;
 @property (nonatomic, readwrite, copy) CPTFill *increaseFill;
 @property (nonatomic, readwrite, copy) CPTFill *decreaseFill;
-/// @}
-
-/// @name Bar Style
-/// @{
--(void)reloadBarFills;
--(void)reloadBarFillsInIndexRange:(NSRange)indexRange;
--(void)reloadBarLineStyles;
--(void)reloadBarLineStylesInIndexRange:(NSRange)indexRange;
 /// @}
 
 @end

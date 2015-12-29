@@ -1,16 +1,21 @@
-@interface CPTColorSpace : NSObject<NSCoding>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 
-@property (nonatomic, readonly) CGColorSpaceRef cgColorSpace;
+@interface CPTColorSpace : NSObject<NSCoding> {
+    @private
+    CGColorSpaceRef cgColorSpace;
+}
+
+@property (nonatomic, readonly, assign) CGColorSpaceRef cgColorSpace;
 
 /// @name Factory Methods
 /// @{
-+(instancetype)genericRGBSpace;
++(CPTColorSpace *)genericRGBSpace;
 /// @}
 
 /// @name Initialization
 /// @{
--(instancetype)initWithCGColorSpace:(CGColorSpaceRef)colorSpace NS_DESIGNATED_INITIALIZER;
--(instancetype)initWithCoder:(NSCoder *)decoder NS_DESIGNATED_INITIALIZER;
+-(id)initWithCGColorSpace:(CGColorSpaceRef)colorSpace;
 /// @}
 
 @end

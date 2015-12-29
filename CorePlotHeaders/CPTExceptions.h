@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 /// @file
 
 /// @name Custom Exception Identifiers

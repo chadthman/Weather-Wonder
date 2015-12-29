@@ -1,12 +1,15 @@
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+
 /** @category NSNumber(CPTExtensions)
  *  @brief Core Plot extensions to NSNumber.
  **/
 @interface NSNumber(CPTExtensions)
 
-+(instancetype)numberWithCGFloat:(CGFloat)number;
++(NSNumber *)numberWithCGFloat:(CGFloat)number;
 
 -(CGFloat)cgFloatValue;
--(instancetype)initWithCGFloat:(CGFloat)number;
+-(id)initWithCGFloat:(CGFloat)number;
 
 -(NSDecimalNumber *)decimalNumber;
 
