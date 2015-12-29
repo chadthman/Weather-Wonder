@@ -1,5 +1,3 @@
-#import <Foundation/Foundation.h>
-
 /// @ingroup themeNames
 /// @{
 extern NSString *const kCPTDarkGradientTheme; ///< A graph theme with dark gray gradient backgrounds and light gray lines.
@@ -14,18 +12,15 @@ extern NSString *const kCPTStocksTheme;       ///< A graph theme with a gradient
 @class CPTAxisSet;
 @class CPTMutableTextStyle;
 
-@interface CPTTheme : NSObject<NSCoding> {
-    @private
-    Class graphClass;
-}
+@interface CPTTheme : NSObject<NSCoding>
 
-@property (nonatomic, readwrite, retain) Class graphClass;
+@property (nonatomic, readwrite, strong) Class graphClass;
 
 /// @name Theme Management
 /// @{
 +(void)registerTheme:(Class)themeClass;
 +(NSArray *)themeClasses;
-+(CPTTheme *)themeNamed:(NSString *)theme;
++(instancetype)themeNamed:(NSString *)theme;
 +(NSString *)name;
 /// @}
 
