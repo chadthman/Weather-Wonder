@@ -525,27 +525,25 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     }
     [apcpsfcPlotSpace scaleToFitPlots:[NSArray arrayWithObjects:apcpsfcPlot, nil]];
     CPTMutablePlotRange *xRange = [apcpsfcPlotSpace.xRange mutableCopy];
-    [xRange setLocation: CPTDecimalFromString([NSString stringWithFormat:@"%f",
-                                               (((xRange.lengthDouble * xRangeExpandFactor) - xRange.lengthDouble)/-xRangePadding)])];
+    [xRange setLocation: [NSNumber numberWithDouble: (((xRange.lengthDouble * xRangeExpandFactor) - xRange.lengthDouble)/-xRangePadding)]];
     apcpsfcPlotSpace.xRange = xRange;
-    CPTMutablePlotRange *yRange = [CPTMutablePlotRange plotRangeWithLocation:CPTDecimalFromCGFloat(0.0f)
-                                                                      length:CPTDecimalFromCGFloat(apcpsfcPlotSpace.yRange.maxLimitDouble)];
+    CPTMutablePlotRange *yRange = [CPTMutablePlotRange plotRangeWithLocation:[NSNumber numberWithFloat:0.0f]
+                                                                      length:[NSNumber numberWithFloat:apcpsfcPlotSpace.yRange.maxLimitDouble]];
 //    [yRange setLocation: CPTDecimalFromString([NSString stringWithFormat:@"%f",
 //                                               (((yRange.lengthDouble * 1.1) - yRange.lengthDouble)/-2)])];
-    [yRange expandRangeByFactor:CPTDecimalFromCGFloat(yRangeExpandFactor)];
+    [yRange expandRangeByFactor:[NSNumber numberWithFloat:yRangeExpandFactor]];
     apcpsfcPlotSpace.yRange = yRange;
         
     [temperaturePlotSpace scaleToFitPlots:[NSArray arrayWithObjects:tmax2mPlot, tmin2mPlot, nil]];
     xRange = [temperaturePlotSpace.xRange mutableCopy];
     //[xRange expandRangeByFactor:CPTDecimalFromCGFloat(1.1f)];
-    [xRange setLocation: CPTDecimalFromString([NSString stringWithFormat:@"%f",
-                                               (((xRange.lengthDouble * xRangeExpandFactor) - xRange.lengthDouble)/-xRangePadding)])];
+    [xRange setLocation: [NSNumber numberWithDouble:(((xRange.lengthDouble * xRangeExpandFactor) - xRange.lengthDouble)/-xRangePadding)]];
     temperaturePlotSpace.xRange = xRange;
-    yRange = [CPTMutablePlotRange plotRangeWithLocation:CPTDecimalFromCGFloat(0.0f)
-                                                 length:CPTDecimalFromCGFloat(temperaturePlotSpace.yRange.maxLimitDouble)];
+    yRange = [CPTMutablePlotRange plotRangeWithLocation:[NSNumber numberWithFloat:0.0f]
+                                                 length:[NSNumber numberWithFloat:temperaturePlotSpace.yRange.maxLimitDouble]];
 //    [yRange setLocation: CPTDecimalFromString([NSString stringWithFormat:@"%f",
 //                                               (((yRange.lengthDouble * 1.1) - yRange.lengthDouble)/-2)])];
-    [yRange expandRangeByFactor:CPTDecimalFromCGFloat(yRangeExpandFactor)];
+    [yRange expandRangeByFactor:[NSNumber numberWithFloat:yRangeExpandFactor]];
     temperaturePlotSpace.yRange = yRange;
     
     // Creates a drop gradient on the graphs
@@ -555,9 +553,9 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     areaGradient.angle = -90.0f;
     CPTFill *areaGradientFill = [CPTFill fillWithGradient:areaGradient];
     apcpsfcPlot.areaFill = areaGradientFill;
-    apcpsfcPlot.areaBaseValue = CPTDecimalFromString(@"0.0");
+    apcpsfcPlot.areaBaseValue = [NSNumber numberWithDouble:0.0];
     tmin2mPlot.areaFill = areaGradientFill;
-    tmin2mPlot.areaBaseValue = CPTDecimalFromString(@"1.75");
+    tmin2mPlot.areaBaseValue = [NSNumber numberWithDouble:1.75];
     
     CPTColor *areaColorGreen = [CPTColor greenColor];
     areaGradient = [CPTGradient gradientWithBeginningColor:areaColorGreen
@@ -565,7 +563,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     areaGradient.angle = -90.0f;
     areaGradientFill = [CPTFill fillWithGradient:areaGradient];
     tmax2mPlot.areaFill = areaGradientFill;
-    tmax2mPlot.areaBaseValue = CPTDecimalFromString(@"1.75");
+    tmax2mPlot.areaBaseValue = [NSNumber numberWithDouble:1.75];
     
     // 4 - Create styles and symbols
     CPTMutableLineStyle *apcpsfcLineStyle = [apcpsfcPlot.dataLineStyle mutableCopy];
@@ -663,7 +661,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     x.labelTextStyle = axisTextStyle;
     x.majorTickLineStyle = axisLineStyle;
     x.majorTickLength = 4.0f;
-    x.tickDirection = CPTSignNegative;
+    //x.tickDirection = CPTSignNegative;
     CGFloat dateCount = [[[CPDStockPriceStore sharedInstance] combineTimeArrays:numberOfTimesOfDay] count];
     NSMutableSet *xLabels = [NSMutableSet setWithCapacity:dateCount];
     NSMutableSet *xLocations = [NSMutableSet setWithCapacity:dateCount];
@@ -671,7 +669,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     for (NSString *date in [[CPDStockPriceStore sharedInstance] combineTimeArrays:numberOfTimesOfDay]) {
         CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:date  textStyle:x.labelTextStyle];
         CGFloat location = i++;
-        label.tickLocation = CPTDecimalFromCGFloat(location);
+        label.tickLocation = [NSNumber numberWithFloat:location];
         label.offset = x.majorTickLength;
         if (label) {
             [xLabels addObject:label];
@@ -691,7 +689,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     xx.labelTextStyle = axisTextStyle;
     xx.majorTickLineStyle = axisLineStyle;
     xx.majorTickLength = 4.0f;
-    xx.tickDirection = CPTSignNegative;
+    //xx.tickDirection = CPTSignNegative;
     CGFloat tempDateCount = [[[CPDStockPriceStore sharedInstance] combineTimeArrays:numberOfTimesOfDay] count];
     NSMutableSet *xxLabels = [NSMutableSet setWithCapacity:tempDateCount];
     NSMutableSet *xxLocations = [NSMutableSet setWithCapacity:tempDateCount];
@@ -699,7 +697,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     for (NSString *date in [[CPDStockPriceStore sharedInstance] combineTimeArrays:numberOfTimesOfDay]) {
         CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:date  textStyle:xx.labelTextStyle];
         CGFloat location = i++;
-        label.tickLocation = CPTDecimalFromCGFloat(location);
+        label.tickLocation = [NSNumber numberWithFloat:location];
         label.offset = xx.majorTickLength;
         if (label) {
             [xxLabels addObject:label];
@@ -724,7 +722,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     y.majorTickLineStyle = axisLineStyle;
     y.majorTickLength = 0.1f;
     y.minorTickLength = 0.01f;
-    y.tickDirection = CPTSignPositive;
+    //.tickDirection = CPTSignPositive;
     NSInteger majorIncrement = 5;
     NSInteger minorIncrement = 1;
     CGFloat yMax = 700.0f;  // should determine dynamically based on max price
@@ -734,13 +732,13 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     for (NSInteger j = minorIncrement; j <= yMax; j += minorIncrement) {
         NSUInteger mod = j % majorIncrement;
         if (mod == 0) {
-            CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%i", j] textStyle:y.labelTextStyle];
-            NSDecimal location = CPTDecimalFromInteger(j);
-            label.tickLocation = location;
+            CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%li", (long)j] textStyle:y.labelTextStyle];
+            label.tickLocation = [NSNumber numberWithInteger:j];
             label.offset = -y.majorTickLength - y.labelOffset;
             if (label) {
                 [yLabels addObject:label];
             }
+            NSDecimal location = CPTDecimalFromInteger(j);
             [yMajorLocations addObject:[NSDecimalNumber decimalNumberWithDecimal:location]];
         } else {
             [yMinorLocations addObject:[NSDecimalNumber decimalNumberWithDecimal:CPTDecimalFromInteger(j)]];
@@ -763,7 +761,7 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     yy.majorTickLineStyle = axisLineStyle;
     yy.majorTickLength = 0.1f;
     yy.minorTickLength = 0.01f;
-    yy.tickDirection = CPTSignPositive;
+    //yy.tickDirection = CPTSignPositive;
     NSInteger tempMajorIncrement = 10;
     NSInteger tempMinorIncrement = 5;
     CGFloat yyMax = 700.0f;  // should determine dynamically based on max size
@@ -773,13 +771,13 @@ NSString *  const tickerSymbolAPCPSFC    = @"APCPSFC";
     for (NSInteger j = tempMinorIncrement; j <= yyMax; j += tempMinorIncrement) {
         NSUInteger mod = j % tempMajorIncrement;
         if (mod == 0) {
-            CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%i", j] textStyle:yy.labelTextStyle];
-            NSDecimal location = CPTDecimalFromInteger(j);
-            label.tickLocation = location;
+            CPTAxisLabel *label = [[CPTAxisLabel alloc] initWithText:[NSString stringWithFormat:@"%li", (long)j] textStyle:yy.labelTextStyle];
+            label.tickLocation = [NSNumber numberWithInteger:j];
             label.offset = -yy.majorTickLength - yy.labelOffset;
             if (label) {
                 [yyLabels addObject:label];
             }
+            NSDecimal location = CPTDecimalFromInteger(j);
             [yyMajorLocations addObject:[NSDecimalNumber decimalNumberWithDecimal:location]];
         } else {
             [yyMinorLocations addObject:[NSDecimalNumber decimalNumberWithDecimal:CPTDecimalFromInteger(j)]];

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "308"
-            endingLineNumber = "308"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "-apcosfcStats"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "323"
-            endingLineNumber = "323"
+            startingLineNumber = "329"
+            endingLineNumber = "329"
             landmarkName = "-generateDailyWithInput:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
             landmarkName = "-generateDailyWithInput:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "-generateDailyWithInput:"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
             landmarkName = "-generateStats"
             landmarkType = "5">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "-generateDailyWithInput:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "-generateDailyWithInput:"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "356"
+            endingLineNumber = "356"
             landmarkName = "-generateDailyWithInput:"
             landmarkType = "5">
          </BreakpointContent>
@@ -304,7 +304,7 @@
             startingLineNumber = "189"
             endingLineNumber = "189"
             landmarkName = "-weatherDisplayButton:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -320,7 +320,7 @@
             startingLineNumber = "161"
             endingLineNumber = "161"
             landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "309"
-            endingLineNumber = "309"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "-apcosfcStats"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-getData:"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-getData:"
             landmarkType = "5">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
             landmarkName = "-apcosfcStats"
             landmarkType = "5">
          </BreakpointContent>
@@ -430,7 +430,7 @@
             startingLineNumber = "117"
             endingLineNumber = "117"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -446,7 +446,7 @@
             startingLineNumber = "115"
             endingLineNumber = "115"
             landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -494,7 +494,7 @@
             startingLineNumber = "126"
             endingLineNumber = "126"
             landmarkName = "-scrollViewDidScroll:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -509,8 +509,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
             endingLineNumber = "125"
-            landmarkName = "@implementation WWGraphViewController"
-            landmarkType = "3">
+            landmarkName = "-scrollViewDidScroll:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -520,11 +520,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "-correctTimeZone:"
             landmarkType = "5">
          </BreakpointContent>
@@ -536,11 +536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
             landmarkName = "-correctTimeZone:"
             landmarkType = "5">
          </BreakpointContent>
@@ -558,7 +558,7 @@
             startingLineNumber = "210"
             endingLineNumber = "210"
             landmarkName = "-numberForPlot:field:recordIndex:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -574,7 +574,7 @@
             startingLineNumber = "180"
             endingLineNumber = "180"
             landmarkName = "-weatherDisplayButton:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -590,7 +590,7 @@
             startingLineNumber = "211"
             endingLineNumber = "211"
             landmarkName = "-numberForPlot:field:recordIndex:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -606,7 +606,7 @@
             startingLineNumber = "179"
             endingLineNumber = "179"
             landmarkName = "-weatherDisplayButton:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -622,7 +622,7 @@
             startingLineNumber = "213"
             endingLineNumber = "213"
             landmarkName = "-numberForPlot:field:recordIndex:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -632,11 +632,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-getHourSetInfoOnType:onDay:atTime:"
             landmarkType = "5">
          </BreakpointContent>
@@ -654,7 +654,7 @@
             startingLineNumber = "168"
             endingLineNumber = "168"
             landmarkName = "-didRotateFromInterfaceOrientation:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -680,11 +680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "-getStats:"
             landmarkType = "5">
          </BreakpointContent>
@@ -696,11 +696,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "-getStats:"
             landmarkType = "5">
          </BreakpointContent>
@@ -718,7 +718,7 @@
             startingLineNumber = "188"
             endingLineNumber = "188"
             landmarkName = "-weatherDisplayButton:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -728,11 +728,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "-getEndingTime:withIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -744,11 +744,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
             landmarkName = "-getEndingTime:withIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -760,11 +760,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-getStartingTime:"
             landmarkType = "5">
          </BreakpointContent>
@@ -792,11 +792,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "523"
-            endingLineNumber = "523"
+            startingLineNumber = "538"
+            endingLineNumber = "538"
             landmarkName = "-refreshWeather"
             landmarkType = "5">
          </BreakpointContent>
@@ -808,11 +808,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "520"
-            endingLineNumber = "520"
+            startingLineNumber = "535"
+            endingLineNumber = "535"
             landmarkName = "-refreshWeather"
             landmarkType = "5">
          </BreakpointContent>
@@ -824,11 +824,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
+            startingLineNumber = "536"
+            endingLineNumber = "536"
             landmarkName = "-refreshWeather"
             landmarkType = "5">
          </BreakpointContent>
@@ -840,11 +840,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "-getStartingTime:"
             landmarkType = "5">
          </BreakpointContent>
@@ -856,11 +856,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "-getStartingTime:"
             landmarkType = "5">
          </BreakpointContent>
@@ -872,11 +872,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418157781.788007"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-getEndingTime:withIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -894,6 +894,38 @@
             startingLineNumber = "473"
             endingLineNumber = "473"
             landmarkName = "-configureGraph"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather Wonder/WWViewController.m"
+            timestampString = "475385033.350595"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "440"
+            endingLineNumber = "440"
+            landmarkName = "-getTimeOfDay:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Weather Wonder/CPDStockPriceStore.m"
+            timestampString = "418179761.658663"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-combineTimeArrays:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -904,28 +936,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Wonder/WWViewController.m"
-            timestampString = "418178650.539166"
+            timestampString = "475385033.350595"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
-            landmarkName = "-getTimeOfDay:"
+            startingLineNumber = "531"
+            endingLineNumber = "531"
+            landmarkName = "-refreshWeather"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather Wonder/CPDStockPriceStore.m"
-            timestampString = "418179761.658663"
+            filePath = "Weather Wonder/WWViewController.m"
+            timestampString = "475368249.792251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "-combineTimeArrays:"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

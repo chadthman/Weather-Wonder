@@ -8,15 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		284D1DBA16F9FDAF00FCCB15 /* fake-data.json in Resources */ = {isa = PBXBuildFile; fileRef = 284D1DB916F9FDAF00FCCB15 /* fake-data.json */; };
+		632018231BA7B91900928E0E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 632018221BA7B91900928E0E /* Accelerate.framework */; };
 		6327629716F5603100E3B78F /* CPDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4D4316F3EFDB00BE30DB /* CPDConstants.m */; };
 		6327629816F5603F00E3B78F /* CPDStockPriceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4D4516F3EFDB00BE30DB /* CPDStockPriceStore.m */; };
+		632EEA9A1E80DCF500F60726 /* libCorePlot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632EEA981E80DC5E00F60726 /* libCorePlot.a */; };
 		6334850D17020E0900E38C04 /* WeatherIconSun.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334850C17020E0900E38C04 /* WeatherIconSun.png */; };
 		6334850F17021B6400E38C04 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334850E17021B6400E38C04 /* Default.png */; };
 		6334851117021F7A00E38C04 /* iPadIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334851017021F7A00E38C04 /* iPadIcon.png */; };
 		6334851317021FF200E38C04 /* iPadIconsmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334851217021FF200E38C04 /* iPadIconsmall.png */; };
 		633485151702209800E38C04 /* iPhoneIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 633485141702209800E38C04 /* iPhoneIcon.png */; };
 		633485171702209B00E38C04 /* iPhoneRetinaIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 633485161702209B00E38C04 /* iPhoneRetinaIcon.png */; };
-		633485191702258200E38C04 /* iPad.png in Frameworks */ = {isa = PBXBuildFile; fileRef = 633485181702258200E38C04 /* iPad.png */; };
 		6334851B170225A200E38C04 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334851A170225A200E38C04 /* Default-Landscape~ipad.png */; };
 		6334851D170225B200E38C04 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334851C170225B200E38C04 /* Default-Landscape@2x~ipad.png */; };
 		6334851F170225C600E38C04 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334851E170225C600E38C04 /* Default-Portrait~ipad.png */; };
@@ -42,12 +43,14 @@
 		639A4CD816F3C7A800BE30DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639A4CB016F3C7A800BE30DB /* Foundation.framework */; };
 		639A4CE016F3C7A800BE30DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 639A4CDE16F3C7A800BE30DB /* InfoPlist.strings */; };
 		639A4CE316F3C7A800BE30DB /* Weather_WonderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4CE216F3C7A800BE30DB /* Weather_WonderTests.m */; };
-		639A4D3F16F3ED5300BE30DB /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 639A4D3E16F3ED5300BE30DB /* libCorePlot-CocoaTouch.a */; };
 		639A4D4116F3EF8C00BE30DB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 639A4D4016F3EF8C00BE30DB /* QuartzCore.framework */; };
 		639A4D4616F3EFDB00BE30DB /* CPDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4D4316F3EFDB00BE30DB /* CPDConstants.m */; };
 		639A4D4716F3EFDB00BE30DB /* CPDStockPriceStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4D4516F3EFDB00BE30DB /* CPDStockPriceStore.m */; };
 		639A4D4A16F3F36600BE30DB /* WWGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4D4916F3F36600BE30DB /* WWGraphViewController.m */; };
 		639A4D4D16F3FF9B00BE30DB /* WWPieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639A4D4C16F3FF9B00BE30DB /* WWPieViewController.m */; };
+		63A75B3A1C5581650073E869 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A75B391C5581650073E869 /* CoreLocation.framework */; };
+		67FD0FF6E27A15ADCCD9E354 /* libPods-Weather Wonder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76ECBF655237A5B6A2B909E5 /* libPods-Weather Wonder.a */; };
+		88B2FAEEE19DEC8D2CD51DF8 /* libPods-Weather WonderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E5E2222E2735878B35AFAC /* libPods-Weather WonderTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,14 @@
 
 /* Begin PBXFileReference section */
 		284D1DB916F9FDAF00FCCB15 /* fake-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "fake-data.json"; sourceTree = "<group>"; };
+		36E5E2222E2735878B35AFAC /* libPods-Weather WonderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather WonderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D15BAEF396F55F6221EC4D1 /* Pods-Weather Wonder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Wonder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather Wonder/Pods-Weather Wonder.debug.xcconfig"; sourceTree = "<group>"; };
+		4B76DF1BD00A3DD2F764B9DA /* Pods-Weather WonderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather WonderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather WonderTests/Pods-Weather WonderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		50116841A8E8BB23A11C350F /* Pods-Weather Wonder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Wonder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather Wonder/Pods-Weather Wonder.release.xcconfig"; sourceTree = "<group>"; };
+		630C7D4C1C55E5BB00CBA8EF /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
+		6316E98C1E80C635009BC702 /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CorePlot.framework; sourceTree = "<group>"; };
+		632018221BA7B91900928E0E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		632EEA981E80DC5E00F60726 /* libCorePlot.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCorePlot.a; path = "../../../Library/Developer/Xcode/DerivedData/Weather_Wonder-awituvzpksfyoodwpiskgknffdmw/Build/Products/Debug-iphoneos/CorePlot/libCorePlot.a"; sourceTree = "<group>"; };
 		6334850C17020E0900E38C04 /* WeatherIconSun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WeatherIconSun.png; sourceTree = "<group>"; };
 		6334850E17021B6400E38C04 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		6334851017021F7A00E38C04 /* iPadIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPadIcon.png; path = ../iPadIcon.png; sourceTree = "<group>"; };
@@ -176,7 +187,6 @@
 		639A4D3B16F3ED5300BE30DB /* NSCoderExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSCoderExtensions.h; sourceTree = "<group>"; };
 		639A4D3C16F3ED5300BE30DB /* NSDecimalNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDecimalNumberExtensions.h; sourceTree = "<group>"; };
 		639A4D3D16F3ED5300BE30DB /* NSNumberExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
-		639A4D3E16F3ED5300BE30DB /* libCorePlot-CocoaTouch.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libCorePlot-CocoaTouch.a"; sourceTree = "<group>"; };
 		639A4D4016F3EF8C00BE30DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		639A4D4216F3EFDB00BE30DB /* CPDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPDConstants.h; sourceTree = "<group>"; };
 		639A4D4316F3EFDB00BE30DB /* CPDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPDConstants.m; sourceTree = "<group>"; };
@@ -186,6 +196,9 @@
 		639A4D4916F3F36600BE30DB /* WWGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWGraphViewController.m; sourceTree = "<group>"; };
 		639A4D4B16F3FF9B00BE30DB /* WWPieViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWPieViewController.h; sourceTree = "<group>"; };
 		639A4D4C16F3FF9B00BE30DB /* WWPieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWPieViewController.m; sourceTree = "<group>"; };
+		63A75B391C5581650073E869 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6E4A8F56A0E0385A3A81E4FC /* Pods-Weather WonderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather WonderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather WonderTests/Pods-Weather WonderTests.release.xcconfig"; sourceTree = "<group>"; };
+		76ECBF655237A5B6A2B909E5 /* libPods-Weather Wonder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Weather Wonder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,12 +206,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632EEA9A1E80DCF500F60726 /* libCorePlot.a in Frameworks */,
+				63A75B3A1C5581650073E869 /* CoreLocation.framework in Frameworks */,
+				632018231BA7B91900928E0E /* Accelerate.framework in Frameworks */,
 				639A4D4116F3EF8C00BE30DB /* QuartzCore.framework in Frameworks */,
 				639A4CAF16F3C7A800BE30DB /* UIKit.framework in Frameworks */,
 				639A4CB116F3C7A800BE30DB /* Foundation.framework in Frameworks */,
 				639A4CB316F3C7A800BE30DB /* CoreGraphics.framework in Frameworks */,
-				639A4D3F16F3ED5300BE30DB /* libCorePlot-CocoaTouch.a in Frameworks */,
-				633485191702258200E38C04 /* iPad.png in Frameworks */,
+				67FD0FF6E27A15ADCCD9E354 /* libPods-Weather Wonder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +223,7 @@
 			files = (
 				639A4CD716F3C7A800BE30DB /* UIKit.framework in Frameworks */,
 				639A4CD816F3C7A800BE30DB /* Foundation.framework in Frameworks */,
+				88B2FAEEE19DEC8D2CD51DF8 /* libPods-Weather WonderTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +239,7 @@
 				639A4CDB16F3C7A800BE30DB /* Weather WonderTests */,
 				639A4CAD16F3C7A800BE30DB /* Frameworks */,
 				639A4CAC16F3C7A800BE30DB /* Products */,
+				A2727D2FEF2882E0640315AD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,9 +255,15 @@
 		639A4CAD16F3C7A800BE30DB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				632EEA981E80DC5E00F60726 /* libCorePlot.a */,
+				6316E98C1E80C635009BC702 /* CorePlot.framework */,
+				63A75B391C5581650073E869 /* CoreLocation.framework */,
+				632018221BA7B91900928E0E /* Accelerate.framework */,
 				639A4CAE16F3C7A800BE30DB /* UIKit.framework */,
 				639A4CB016F3C7A800BE30DB /* Foundation.framework */,
 				639A4CB216F3C7A800BE30DB /* CoreGraphics.framework */,
+				76ECBF655237A5B6A2B909E5 /* libPods-Weather Wonder.a */,
+				36E5E2222E2735878B35AFAC /* libPods-Weather WonderTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -322,8 +345,8 @@
 		639A4CF216F3EAC100BE30DB /* Core Plot */ = {
 			isa = PBXGroup;
 			children = (
+				630C7D4C1C55E5BB00CBA8EF /* libCorePlot-CocoaTouch.a */,
 				639A4CF316F3ED5300BE30DB /* CorePlotHeaders */,
-				639A4D3E16F3ED5300BE30DB /* libCorePlot-CocoaTouch.a */,
 			);
 			name = "Core Plot";
 			sourceTree = "<group>";
@@ -409,6 +432,17 @@
 			path = CorePlotHeaders;
 			sourceTree = "<group>";
 		};
+		A2727D2FEF2882E0640315AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D15BAEF396F55F6221EC4D1 /* Pods-Weather Wonder.debug.xcconfig */,
+				50116841A8E8BB23A11C350F /* Pods-Weather Wonder.release.xcconfig */,
+				4B76DF1BD00A3DD2F764B9DA /* Pods-Weather WonderTests.debug.xcconfig */,
+				6E4A8F56A0E0385A3A81E4FC /* Pods-Weather WonderTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,9 +450,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 639A4CE616F3C7A800BE30DB /* Build configuration list for PBXNativeTarget "Weather Wonder" */;
 			buildPhases = (
+				60BD3416687E340D4097C5F3 /* [CP] Check Pods Manifest.lock */,
 				639A4CA716F3C7A800BE30DB /* Sources */,
 				639A4CA816F3C7A800BE30DB /* Frameworks */,
 				639A4CA916F3C7A800BE30DB /* Resources */,
+				B14794AAD864393FC40CC24D /* [CP] Embed Pods Frameworks */,
+				BB54AF14357DBCCB99443FB6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,10 +470,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 639A4CE916F3C7A800BE30DB /* Build configuration list for PBXNativeTarget "Weather WonderTests" */;
 			buildPhases = (
+				E07C1B54343DC95EF4E245C5 /* [CP] Check Pods Manifest.lock */,
 				639A4CCF16F3C7A800BE30DB /* Sources */,
 				639A4CD016F3C7A800BE30DB /* Frameworks */,
 				639A4CD116F3C7A800BE30DB /* Resources */,
 				639A4CD216F3C7A800BE30DB /* ShellScript */,
+				FEEEAC0E2E983736A7AA56D2 /* [CP] Embed Pods Frameworks */,
+				DAD64455314F177EC32148BF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -456,8 +496,13 @@
 			attributes = {
 				CLASSPREFIX = WW;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Chad Marmon";
+				TargetAttributes = {
+					639A4CAA16F3C7A800BE30DB = {
+						DevelopmentTeam = TCXAZYTP77;
+					};
+				};
 			};
 			buildConfigurationList = 639A4CA616F3C7A800BE30DB /* Build configuration list for PBXProject "Weather Wonder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -516,6 +561,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		60BD3416687E340D4097C5F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		639A4CD216F3C7A800BE30DB /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -528,6 +588,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		B14794AAD864393FC40CC24D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather Wonder/Pods-Weather Wonder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB54AF14357DBCCB99443FB6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather Wonder/Pods-Weather Wonder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAD64455314F177EC32148BF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather WonderTests/Pods-Weather WonderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E07C1B54343DC95EF4E245C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FEEEAC0E2E983736A7AA56D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather WonderTests/Pods-Weather WonderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -618,6 +753,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -629,7 +765,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -654,7 +790,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -664,43 +800,66 @@
 		};
 		639A4CE716F3C7A800BE30DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D15BAEF396F55F6221EC4D1 /* Pods-Weather Wonder.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = TCXAZYTP77;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weather Wonder/Weather Wonder-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "Weather Wonder/Weather Wonder-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		639A4CE816F3C7A800BE30DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50116841A8E8BB23A11C350F /* Pods-Weather Wonder.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = TCXAZYTP77;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weather Wonder/Weather Wonder-Prefix.pch";
 				INFOPLIST_FILE = "Weather Wonder/Weather Wonder-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				New_Setting = "";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		639A4CEA16F3C7A800BE30DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B76DF1BD00A3DD2F764B9DA /* Pods-Weather WonderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weather Wonder.app/Weather Wonder";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -711,6 +870,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weather Wonder/Weather Wonder-Prefix.pch";
 				INFOPLIST_FILE = "Weather WonderTests/Weather WonderTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -718,6 +878,7 @@
 		};
 		639A4CEB16F3C7A800BE30DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E4A8F56A0E0385A3A81E4FC /* Pods-Weather WonderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weather Wonder.app/Weather Wonder";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -728,6 +889,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Weather Wonder/Weather Wonder-Prefix.pch";
 				INFOPLIST_FILE = "Weather WonderTests/Weather WonderTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Me.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
